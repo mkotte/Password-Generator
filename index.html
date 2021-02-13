@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="develop/style.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -24,11 +24,36 @@
             aria-label="Generated Password"
           ></textarea>
         </div>
+
+        <form class="card-numbers">
+          <label class="card-numbers" for="quantity">Password Length (between 8 and 128):</label>
+          <input class="card-numbers" type="number" id="quantity" name="quantity" min="8" max="128"></br>
+          <input class="btn" type="submit" onclick="nextForm()" value="Next">
+        </form>
+        
+        <form class="checkboxes">
+          <div class="char-header">
+            <p>Select the type of character's desired for your password.</p>  
+            <p>(choose at least one)</p>
+          </div>
+          <div class="card-chars">
+          <input type="checkbox" id="lowercase" name="lowercase" value="lc">
+          <label for="lowercase"> Lowercase</label><br>
+          <input type="checkbox" id="uppercase" name="uppercase" value="uc">
+          <label for="uppercase"> Uppercase</label><br>
+          <input type="checkbox" id="numeric" name="numeric" value="num">
+          <label for="numeric"> Numeric</label></br>
+          <input type="checkbox" id="special" name="special" value="spec">
+          <label for="special"> Special</label> 
+          <input class="btn" type="submit" onclick="generatePassword()" value="Submit">
+          </div>
+        </form>
+
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="develop/script.js"></script>
   </body>
 </html>
