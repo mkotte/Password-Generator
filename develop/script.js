@@ -1,9 +1,20 @@
 // Assignment Code
 const generateBtn = document.querySelector("#generate");
 
-// Add arrays of possible password variables
+// Object of possible password character values
+const characters = {
+  lowercase: "abcedefghijklmnopqrstuvwxyz",
+  uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  numeric: "1234567890",
+  special: "!@#$%&*()"
+}
 
-// Add values for password options
+// Values for password options on modal
+const lowercaseOpt = document.getElementById("lowercaseOpt");
+const uppercaseOpt = document.getElementById("uppercaseOpt");
+const numericOpt = document.getElementById("numericOpt");
+const specialOpt = document.getElementById("specialOpt");
+const passwordLength = document.getElementById("password-length");
 
 // Write password to the #password input
 function writePassword() {
@@ -16,9 +27,18 @@ function writePassword() {
 
 
 // Create generatePassword function using values from modal
+function generatePassword(){
+  let valuesSelected = [];
   // conditional statement for checkbox values
   // value of desired length
   // math.floor(math.random) for random password values
+
+
+
+
+}
+
+  
 
 //Add event listener for modal submit
 
