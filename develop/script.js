@@ -22,33 +22,42 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
+
 }
 
 // Create generatePassword function using values from modal
 function generatePassword(){
-  let valuesSelected = [];
-  // conditional statement's for checkbox values
-  if (lowercaseOpt.checked){
-    valuesSelected += characters.lowercase
-  }
-  if (uppercaseOpt.checked){
-    valuesSelected += characters.uppercase
-  }
-  if (numericOpt.checked){
-    valuesSelected += characters.numeric
-  }
-  if (specialOpt.checked){
-    valuesSelected += characters.special
-  }
-  
-  let newPassword = '';
-  for (let i = 0; i < passwordLength.value; i++){
-    // creating random password
-    let randomValue = valuesSelected[Math.floor(Math.random() * valuesSelected.length)];
-    newPassword += randomValue;
-  }
+  if (!lowercaseOpt.checked && !uppercaseOpt.checked && !numericOpt.checked && !specialOpt.checked){
+    return 'Please choose at least one character type.'
+  } 
+  else{
+    let valuesSelected = [];
+    // conditional statement's for checkbox values
+    if (lowercaseOpt.checked){
+      valuesSelected += characters.lowercase
+    }
+    if (uppercaseOpt.checked){
+      valuesSelected += characters.uppercase
+    }
+    if (numericOpt.checked){
+      valuesSelected += characters.numeric
+    }
+    if (specialOpt.checked){
+      valuesSelected += characters.special
+    }
+    
 
-  return newPassword;
+    
+
+    let newPassword = '';
+    for (let i = 0; i < passwordLength.value; i++){
+      // creating random password
+      let randomValue = valuesSelected[Math.floor(Math.random() * valuesSelected.length)];
+      newPassword += randomValue;
+    }
+
+    return newPassword;
+  }
 }
 
 // Event listener for modal submit
