@@ -54,41 +54,14 @@ header {
   min-height: 100px;
 }
 
-.card-numbers{
-  justify-content: center;
-  text-align: center;
-  margin:auto;
-  width:auto;
-  /*display changes to block*/
-  display:none;
-}
-
-.checkboxes{
-  /*display changes to ""*/
-  display: none;
-}
-
-.card-chars{
-  text-align: center;
-  display:flex;
-  padding: 10px;
-  margin:auto;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 .char-header p{
   padding-top: 0;
   margin: 0;
   text-align: center;
   font-size: 18px;
   
-  
 }
 
-.card-chars input, label{
-  padding-right: 8px;
-}
 
 .card-footer {
   text-align: center;
@@ -122,6 +95,7 @@ header {
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
+  justify-content: center;
 }
 
 button[disabled] {
@@ -170,4 +144,12 @@ button[disabled] {
   .btn {
     font-size: 0.8rem;
   }
+}
+
+.hidden{
+  display:none;
+}
+
+.visible{
+  display:block;
 }

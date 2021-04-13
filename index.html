@@ -16,6 +16,7 @@
         <div class="card-header">
           <h2>Generate a Password</h2>
         </div>
+
         <div class="card-body">
           <textarea
             readonly
@@ -24,36 +25,69 @@
             aria-label="Generated Password"
           ></textarea>
         </div>
-
-        <form class="card-numbers">
-          <label class="card-numbers" for="quantity">Password Length (between 8 and 128):</label>
-          <input class="card-numbers" type="number" id="quantity" name="quantity" min="8" max="128"></br>
-          <input class="btn" type="submit" onclick="nextForm()" value="Next">
-        </form>
-        
-        <form class="checkboxes">
-          <div class="char-header">
-            <p>Select the type of character's desired for your password.</p>  
-            <p>(choose at least one)</p>
-          </div>
-          <div class="card-chars">
-          <input type="checkbox" id="lowercase" name="lowercase" value="lc">
-          <label for="lowercase"> Lowercase</label><br>
-          <input type="checkbox" id="uppercase" name="uppercase" value="uc">
-          <label for="uppercase"> Uppercase</label><br>
-          <input type="checkbox" id="numeric" name="numeric" value="num">
-          <label for="numeric"> Numeric</label></br>
-          <input type="checkbox" id="special" name="special" value="spec">
-          <label for="special"> Special</label> 
-          <input class="btn" type="submit" onclick="generatePassword()" value="Submit">
-          </div>
-        </form>
+      
 
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
-        </div>
+          <button id="numberButton" class="btn visible" >Generate Password</button>
+        </div>  
+        
       </div>
     </div>
     <script src="develop/script.js"></script>
   </body>
 </html>
+
+<!-- Modal -->
+<div class="modal fade custom-modal" id="pwd-modal" tabindex="-1" role="dialog" aria-labelledby="password-options-form" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="hidden" id="numberForm">
+          <label class="card-numbers" for="quantity">Password Length (between 8 and 128):</label>
+          <input class="card-numbers" type="number" value="8" id="quantity" min="8" max="128"></br>
+          <input class="btn" id="typeButton" type="submit" value="Next">
+        </form>
+      </div>
+      <div class="modal-body">  
+        <form class="hidden"  id="characterForm">
+          <p>Select the type of character's desired for your password.</p>  
+          <p class="hidden" id="error" style="color: red;">(Choose At Least One)</p>
+          <input type="checkbox" id="lowercaseID" name="lowercase" value="lc">
+          <label for="lowercaseID"> Lowercase</label><br>
+          <input type="checkbox" id="uppercaseID" name="uppercase" value="uc">
+          <label for="uppercaseID"> Uppercase</label><br>
+          <input type="checkbox" id="numericID" name="numeric" value="num">
+          <label for="numericID"> Numeric</label></br>
+          <input type="checkbox" id="specialID" name="special" value="spec">
+          <label for="specialID"> Special</label> 
+          <input class="btn"  type="submit" value="Submit">       
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  -->
+
+
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  <label class="form-check-label" for="inlineCheckbox1">1</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+  <label class="form-check-label" for="inlineCheckbox2">2</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+  <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+</div>
