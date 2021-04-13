@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
-    <link rel="stylesheet" href="develop/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="develop/style.css"/>
   </head>
   <body>
     <div class="wrapper">
@@ -28,66 +29,69 @@
       
 
         <div class="card-footer">
-          <button id="numberButton" class="btn visible" >Generate Password</button>
+          <button id="generate" type="button" class="btn" data-toggle="modal"
+          data-target="#pwd-modal" data-whatever="password-options">Generate Password</button>
         </div>  
         
       </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="pwd-modal" tabindex="-1" role="dialog" 
+      aria-labelledby="password-options-form" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Password Options</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="" id="numberForm">
+              <label class="card-numbers" for="quantity">Password Length (between 8 and 128):</label>
+              <input class="card-numbers" type="number" value="8" id="quantity" min="8" max="128"></br>
+            </div>
+            <div id="characters-wrapper">
+              <p>Select the type of character's desired for your password.</p>  
+              <!-- <p class="hidden" id="error" style="color: red;">(Choose At Least One)</p> -->
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="lowercaseID" name="lowercase" value="lc">
+                <label class="form-check-label" for="lowercaseID"> Lowercase</label><br>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="uppercaseID" name="uppercase" value="uc">
+                <label class="form-check-label" for="uppercaseID"> Uppercase</label><br>
+              </div>  
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="numericID" name="numeric" value="num">
+                <label class="form-check-label" for="numericID"> Numeric</label></br>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="specialID" name="special" value="spec">
+                <label class="form-check-label" for="specialID"> Special</label> 
+              </div>   
+            </div>      
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="develop/script.js"></script>
   </body>
 </html>
-
-<!-- Modal -->
-<div class="modal fade custom-modal" id="pwd-modal" tabindex="-1" role="dialog" aria-labelledby="password-options-form" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form class="hidden" id="numberForm">
-          <label class="card-numbers" for="quantity">Password Length (between 8 and 128):</label>
-          <input class="card-numbers" type="number" value="8" id="quantity" min="8" max="128"></br>
-          <input class="btn" id="typeButton" type="submit" value="Next">
-        </form>
-      </div>
-      <div class="modal-body">  
-        <form class="hidden"  id="characterForm">
-          <p>Select the type of character's desired for your password.</p>  
-          <p class="hidden" id="error" style="color: red;">(Choose At Least One)</p>
-          <input type="checkbox" id="lowercaseID" name="lowercase" value="lc">
-          <label for="lowercaseID"> Lowercase</label><br>
-          <input type="checkbox" id="uppercaseID" name="uppercase" value="uc">
-          <label for="uppercaseID"> Uppercase</label><br>
-          <input type="checkbox" id="numericID" name="numeric" value="num">
-          <label for="numericID"> Numeric</label></br>
-          <input type="checkbox" id="specialID" name="special" value="spec">
-          <label for="specialID"> Special</label> 
-          <input class="btn"  type="submit" value="Submit">       
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!--  -->
-
-
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-  <label class="form-check-label" for="inlineCheckbox1">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-  <label class="form-check-label" for="inlineCheckbox2">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-  <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
-</div>

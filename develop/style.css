@@ -146,10 +146,6 @@ button[disabled] {
   }
 }
 
-.hidden{
-  display:none;
-}
-
-.visible{
-  display:block;
+.modal-body{
+  text-align: center;
 }
