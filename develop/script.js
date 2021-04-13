@@ -16,7 +16,6 @@ const numericOpt = document.getElementById("numericOpt");
 const specialOpt = document.getElementById("specialOpt");
 const passwordLength = document.getElementById("password-length");
 const modalSubmit = document.getElementById("modalSubmit");
-console.log(lowercaseOpt && true)
 
 // Write password to the #password input
 function writePassword() {
@@ -26,7 +25,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
 
 // Create generatePassword function using values from modal
 function generatePassword(){
@@ -47,15 +45,20 @@ function generatePassword(){
 
   console.log(valuesSelected)
 
-  
-
   // value of desired length
+  console.log(passwordLength.value) 
+  
+  let newPassword = '';
   // math.floor(math.random()) for random password values
-
-
-
+  for (let i = 0; i < passwordLength.value; i++){
+    let randomValue = valuesSelected[Math.floor(Math.random() * valuesSelected.length)];
+    newPassword += randomValue;
+    console.log(randomValue)
+  }
+  console.log(newPassword)
 
 }
 
 //Add event listener for modal submit
+// TODO: Change to writePassword, add something to close modal on submit, return newPassword value
 modalSubmit.addEventListener('click', generatePassword)
