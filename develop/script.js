@@ -11,7 +11,5 @@ function writePassword() {
 }
 
 
-generateBtn.
-
 
 function generatePassword();
